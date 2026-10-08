@@ -8,7 +8,11 @@ When the main repository has a fix for this, I will archive this repo.
 
 IMPORTANT: This is vibe-coded!
 
+IMPORTANT: If you experience a bug or an issue, please do not go to the upstream repo for help.
+
 ## Installation:
+
+Make sure to uninstall the old version, then run this from your terminal:
 
 ```
 git clone https://github.com/tbored/hidetopbar-gnome51-fix.git
