@@ -21,6 +21,8 @@ make
 gnome-extensions install ./hidetopbar.zip
 ```
 
+Then restart your GNOME Session or reboot your computer.
+
 ## Everything below this is the original README. It may not work for this.
 
 About Hide Top Bar
