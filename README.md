@@ -1,3 +1,24 @@
+# Hide Top Bar GNOME 51 Fix
+
+Forked from https://gitlab.gnome.org/tuxor1337/hidetopbar/
+
+This extension currently does not work on GNOME 51 due to a file at resource:///org/gnome/shell/ui/pointerWatcher.js not existing. This fork removes the need for that file.
+
+When the main repository has a fix for this, I will archive this repo.
+
+IMPORTANT: This is vibe-coded!
+
+## Installation:
+
+```
+git clone https://github.com/tbored/hidetopbar-gnome51-fix.git
+cd hidetopbar-gnome51-fix
+make
+gnome-extensions install ./hidetopbar.zip
+```
+
+## Everything below this is the original README. It may not work for this.
+
 About Hide Top Bar
 ------------------
 
