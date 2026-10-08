@@ -105,7 +105,7 @@ export class PanelVisibilityManager {
         if(trigger == "mouse-left" && this._isHovering(...mouse)) return;
 
         if(this._pointerListener) {
-            this._pointerWatcher.removeWatch(this._pointerListener);
+            this._pointerWatcher.unwatch(this._pointerListener);
             this._pointerListener = null;
         }
 
@@ -198,8 +198,8 @@ export class PanelVisibilityManager {
                         // The cursor is still on the panel. Start watching the
                         // pointer so we know when it leaves the panel.
                         this._pointerListener =
-                            this._pointerWatcher.addWatch
-                                (10, this._handlePointer.bind(this));
+                            this._pointerWatcher.watch
+                                (this._handlePointer.bind(this));
                     }
                 }
             });
@@ -213,7 +213,8 @@ export class PanelVisibilityManager {
                     x < this._staticBox.x2 );
     }
 
-    _handlePointer(x, y) {
+    _handlePointer() {
+        const [x, y] = global.get_pointer();
         if(!this._animationActive && !this._isHovering(x, y)) {
             this._handleMenus();
         }
@@ -302,7 +303,7 @@ export class PanelVisibilityManager {
 
     _disablePressureBarrier() {
         if(this._pointerListener) {
-            this._pointerWatcher.removeWatch(this._pointerListener);
+            this._pointerWatcher.unwatch(this._pointerListener);
             this._pointerListener = null;
         }
 
